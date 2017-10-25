@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2016 The UUV Simulator Authors.
+     All rights reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <xacro:include filename="$(find uuv_descriptions)/models/common/urdf/common.urdf.xacro"/>
+  <xacro:include filename="$(find uuv_sensor_plugins_ros)/urdf/sensor_snippets.xacro"/>
+  <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_snippets.xacro" />
+  <xacro:include filename="$(find uuv_gazebo_ros_plugins)/urdf/snippets.xacro"/>
+
+  <!-- Parameters -->
+  <xacro:property name="visual_mesh_file" value="file://$(find rexrov2_description)/meshes/RexROV2_no_props.dae"/>
+
+  <!-- Mass, see p.28 in Berg2012 -->
+  <xacro:property name="mass" value="1862.87"/>
+
+  <xacro:macro name="rexrov2_base" params="namespace *gazebo use_simplified_mesh">
+    <!-- Defining base link according to ROS conventions: x forward, z up -->
+    <link name="${namespace}/base_link">
+      <inertial>
+        <mass value="${mass}"/>
+        <origin xyz="0 0 0"/>
+        <inertia ixx="525.39" ixy="1.44" ixz="33.41" iyy="794.20" iyz="2.6" izz="691.23"/>
+      </inertial>
+
+      <!-- This visual geometry representation can be used when running
+           tasks in which you need Gazebo to start quickly
+      -->
+      <xacro:if value="${use_simplified_mesh}">
+        <!-- bottom plate -->
+        <visual>
+          <origin xyz="0 0 -0.75" rpy="0 0 0"/>
+          <geometry>
+            <box size="2.56 1.50 0.10"/>
+          </geometry>
+        </visual>
+        <!-- top plate -->
+        <visual>
+          <origin xyz="0 0 0.60" rpy="0 0 0"/>
+          <geometry><box size="2.56 1.50 0.40"/></geometry>
+        </visual>
+        <!-- left / right sides -->
+        <visual>
+          <origin xyz="-0.20 0.70 -0.15" rpy="0 0 0"/>
+          <geometry><box size="2.20 0.10 1.10"/></geometry>
+        </visual>
+        <visual>
+          <origin xyz="-0.20 -0.70 -0.15" rpy="0 0 0"/>
+          <geometry><box size="2.20 0.10 1.10"/></geometry>
+        </visual>
+      </xacro:if>
+
+      <xacro:unless value="${use_simplified_mesh}">
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <mesh filename="${visual_mesh_file}" scale="1 1 1"/>
+          </geometry>
+        </visual>
+      </xacro:unless>
+
+      <!-- bottom plate -->
+      <collision>
+        <origin xyz="0 0 -0.75" rpy="0 0 0"/>
+        <geometry>
+          <box size="2.56 1.50 0.10"/>
+        </geometry>
+      </collision>
+      <!-- top plate -->
+      <collision>
+        <origin xyz="0 0 0.60" rpy="0 0 0"/>
+        <geometry><box size="2.56 1.50 0.40"/></geometry>
+      </collision>
+      <!-- left / right sides -->
+      <collision>
+        <origin xyz="-0.20 0.70 -0.15" rpy="0 0 0"/>
+        <geometry><box size="2.20 0.10 1.10"/></geometry>
+      </collision>
+      <collision>
+        <origin xyz="-0.20 -0.70 -0.15" rpy="0 0 0"/>
+        <geometry><box size="2.20 0.10 1.10"/></geometry>
+      </collision>
+    </link>
+
+    <!-- Set up hydrodynamic plugin given as input parameter -->
+    <xacro:insert_block name="gazebo"/>
+
+    <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_sensors.xacro" />
+    <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_actuators.xacro" />
+
+  </xacro:macro>
+
+</robot>
