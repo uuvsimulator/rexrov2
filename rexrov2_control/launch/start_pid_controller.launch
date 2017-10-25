@@ -1,0 +1,63 @@
+<launch>
+    <arg name="uuv_name" default="rexrov2"/>
+    <!-- Flag to start recoding a rosbag  -->
+    <arg name="record" default="false"/>
+
+    <arg name="gui_on" default="true"/>
+
+    <arg name="Kp" default="11993.888,11993.888,11993.888,19460.069,19460.069,19460.069"/>
+    <arg name="Kd" default="9077.459,9077.459,9077.459,18880.925,18880.925,18880.925"/>
+    <arg name="Ki" default="321.417,321.417,321.417,2096.951,2096.951,2096.951"/>
+
+    <arg name="teleop_on" default="false"/>
+    <arg name="joy_id" default="0"/>
+    <arg name="axis_yaw" default="0"/>
+    <arg name="axis_x" default="4"/>
+    <arg name="axis_y" default="3"/>
+    <arg name="axis_z" default="1"/>
+
+    <!-- Thruster manager configuration -->
+    <arg name="thruster_manager_output_dir" default="$(find rexrov2_control)/config"/>
+    <arg name="thruster_manager_config_file" default="$(find rexrov2_control)/config/thruster_manager.yaml"/>
+    <arg name="tam_file" default="$(find rexrov2_control)/config/TAM.yaml"/>
+
+    <include file="$(find uuv_trajectory_control)/launch/rov_pid_controller.launch">
+      <arg name="uuv_name" value="$(arg uuv_name)"/>
+      <arg name="gui_on" value="$(arg gui_on)"/>
+      <arg name="saturation" value="2000"/>
+      <arg name="Kp" value="$(arg Kp)"/>
+      <arg name="Kd" value="$(arg Kd)"/>
+      <arg name="Ki" value="$(arg Ki)"/>
+      <arg name="thruster_manager_output_dir" value="$(arg thruster_manager_output_dir)"/>
+      <arg name="thruster_manager_config_file" value="$(arg thruster_manager_config_file)"/>
+      <arg name="tam_file" value="$(arg tam_file)"/>
+    </include>
+
+    <!-- Initialize the recording fo the simulation according to the record flag  -->
+    <include file="$(find rexrov2_control)/launch/record_demo.launch">
+      <arg name="record" value="$(arg record)"/>
+    </include>
+
+    <group if="$(arg teleop_on)">
+      <!-- Start joystick teleop node  -->
+      <include file="$(find uuv_teleop)/launch/uuv_teleop.launch">
+          <arg name="uuv_name" value="$(arg uuv_name)"/>
+          <arg name="joy_id" value="$(arg joy_id)"/>
+          <arg name="output_topic" value="cmd_vel"/>
+          <arg name="message_type" value="twist"/>
+          <arg name="axis_yaw" value="$(arg axis_yaw)"/>
+          <arg name="axis_x" value="$(arg axis_x)"/>
+          <arg name="axis_y" value="$(arg axis_y)"/>
+          <arg name="axis_z" value="$(arg axis_z)"/>
+          <arg name="gain_yaw" default="0.2"/>
+          <arg name="gain_x" default="0.5"/>
+          <arg name="gain_y" default="0.5"/>
+          <arg name="gain_z" default="0.5"/>
+      </include>
+    </group>
+
+    <group if="$(arg gui_on)">
+      <!-- Start RViz  -->
+      <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find rexrov2_control)/rviz/rexrov2_control.rviz"/>
+    </group>
+</launch>

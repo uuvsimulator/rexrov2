@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2016 The UUV Simulator Authors.
+     All rights reserved.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="0">
+    <origin xyz="0.4878 0 0.2373" rpy="0 0 ${90*d2r}"/>
+  </xacro:thruster_macro>
+
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="1">
+    <origin xyz="-0.8217 0 0.589" rpy="0 ${-75*d2r} 0"/>
+  </xacro:thruster_macro>
+
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="2">
+    <origin xyz="0.8654 -0.5322 0.5332" rpy="0 ${-67.5*d2r} ${90*d2r}"/>
+  </xacro:thruster_macro>
+
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="3">
+    <origin xyz="0.8654 0.5322 0.5332" rpy="0 ${67.5*d2r} ${90*d2r}"/>
+  </xacro:thruster_macro>
+
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="4">
+    <origin xyz="-0.7076 0.5129 0.2404" rpy="0 0 ${25*d2r}"/>
+  </xacro:thruster_macro>
+
+  <xacro:thruster_macro namespace="${namespace}" thruster_id="5">
+    <origin xyz="-0.7076 -0.5129 0.2404" rpy="0 0 ${-25*d2r}"/>
+  </xacro:thruster_macro>
+</robot>
