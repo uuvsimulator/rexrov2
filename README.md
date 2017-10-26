@@ -31,7 +31,7 @@ this package in the `src` folder of you catkin workspace
 
 ```
 cd ~/catkin_ws/src
-git clone [URL]
+git clone https://github.com/uuvsimulator/rexrov2.git
 ```
 
 and then build your catkin workspace
