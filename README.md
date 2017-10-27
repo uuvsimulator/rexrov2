@@ -4,7 +4,8 @@ This repository contains the robot description and necessary launch files to
 simulate the RexROV 2 unmanned underwater vehicle. This repository is complementary
 to the [Unmanned Underwater Vehicle Simulator (UUV Simulator)](https://github.com/uuvsimulator/uuv_simulator),
 an open-source project extending the simulation capabilities of the robotics
-simulator Gazebo to underwater vehicles and environments.
+simulator Gazebo to underwater vehicles and environments. For installation and
+usage instructions, please refer to the [documentation pages](https://uuvsimulator.github.io/).
 
 The dimensions and parameters for the RexROV 2 are derived from the published
 model parameters for the SF 30k ROV [1].
@@ -40,6 +41,24 @@ and then build your catkin workspace
 cd ~/catkin_ws
 catkin_make # or <catkin build>, if you are using catkin_tools
 ```
+
+## Example of usage
+
+To run a demonstration with the vehicle with teleoperation, you can run a UUV
+simulator Gazebo scenario, such as
+
+```bash
+roslaunch uuv_descriptions ocean_waves.launch
+```
+
+and then
+
+```bash
+roslaunch rexrov2_gazebo start_rexrov2_pid_controller.launch teleop_on:=true joy_id:=0
+```
+
+The teleoperation nodes are pre-configured per default for the XBox 360
+controller.
 
 ## License
 

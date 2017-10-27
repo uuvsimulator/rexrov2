@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>rexrov2_description</name>
-  <version>0.1.0</version>
-  <description>The robot description files for the RexROV 2 underwater vehicle</description>
+  <name>rexrov2_gazebo</name>
+  <version>0.1.1</version>
+  <description>Package with launch files for demonstrations with the RexROV 2 vehicle</description>
 
   <maintainer email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
   <maintainer email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</maintainer>
@@ -16,12 +16,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>message_to_tf</run_depend>
-  <run_depend>uuv_sensor_plugins_ros</run_depend>
-  <run_depend>uuv_gazebo_ros_plugins</run_depend>
-  <run_depend>oberon4_description</run_depend>
-  <run_depend>oberon7_description</run_depend>
+  <run_depend>rexrov2_description</run_depend>
+  <run_depend>rexrov2_control</run_depend>
 
 </package>
