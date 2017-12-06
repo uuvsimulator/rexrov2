@@ -23,7 +23,7 @@
         <arg name="joy_id" value="$(arg joy_id)"/>
     </include>
 
-    <include file="$(find rexrov2_smac_pid_controller)/launch/record.launch">
+    <include file="$(find rexrov2_gazebo)/launch/record.launch">
       <arg name="record" value="$(arg record)"/>
       <arg name="bag_filename" value="$(arg bag_filename)"/>
     </include>

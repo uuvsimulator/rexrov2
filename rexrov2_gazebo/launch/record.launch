@@ -1,0 +1,20 @@
+<launch>
+  <arg name="record" default="false"/>
+  <arg name="bag_filename" default="$(find rexrov2_smac_pid_controller)/bags/recording.bag"/>
+
+  <node pkg="rosbag" type="record" name="recording"
+    args="record -O $(arg bag_filename)
+      /rexrov2/dp_controller/trajectory
+      /rexrov2/dp_controller/reference
+      /rexrov2/pose_gt
+      /hydrodynamics/current_velocity
+      /rexrov2/thruster_manager/input
+      /rexrov2/wrench_perturbation
+      /rexrov2/thrusters/0/thrust
+      /rexrov2/thrusters/1/thrust
+      /rexrov2/thrusters/2/thrust
+      /rexrov2/thrusters/3/thrust
+      /rexrov2/thrusters/4/thrust
+      /rexrov2/thrusters/5/thrust"
+    if="$(arg record)"/>
+</launch>
