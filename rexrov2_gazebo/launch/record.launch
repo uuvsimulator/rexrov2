@@ -1,6 +1,6 @@
 <launch>
   <arg name="record" default="false"/>
-  <arg name="bag_filename" default="$(find rexrov2_smac_pid_controller)/bags/recording.bag"/>
+  <arg name="bag_filename" default="recording.bag"/>
 
   <node pkg="rosbag" type="record" name="recording"
     args="record -O $(arg bag_filename)
