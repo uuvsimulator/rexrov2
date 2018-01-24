@@ -1,5 +1,5 @@
 mass: 1862.87
-model: rexrov
+model: rexrov2
 inertial:
   ixx: 525.39
   iyy: 794.2
