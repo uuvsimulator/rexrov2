@@ -11,14 +11,15 @@
   <arg name="mode" default="default"/>
   <arg name="namespace" default="rexrov2"/>
   <arg name="use_simplified_mesh" default="false"/>
-  <arg name="world_frame" default="world"/> <!-- This should actually be "/world". See https://github.com/ros-simulation/gazebo_ros_pkgs/pull/324 -->
+  <arg name="world_frame" default="world"/>
 
   <group ns="$(arg namespace)">
     <param name="robot_description"
            command="$(find xacro)/xacro '$(find rexrov2_description)/robots/rexrov2_$(arg mode).xacro' --inorder
                     use_simplified_mesh:=$(arg use_simplified_mesh)
                     debug:=$(arg debug)
-                    namespace:=$(arg namespace)" />
+                    namespace:=$(arg namespace)
+                    inertial_reference_frame:=$(arg world_frame)" />
 
     <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
     <node name="urdf_spawner" pkg="uuv_descriptions" type="spawn_model.py" respawn="false" output="screen"
@@ -33,8 +34,13 @@
     </node>
   </group>
 
-  <include file="$(find uuv_descriptions)/models/common/launch/message_to_tf.launch">
+  <include file="$(find uuv_assistants)/launch/publish_body_sname.launch">
+    <arg name="uuv_name" value="$(arg namespace)"/>
+  </include>
+
+  <include file="$(find uuv_assistants)/launch/message_to_tf.launch">
     <arg name="namespace" value="$(arg namespace)"/>
+    <arg name="world_frame" value="$(arg world_frame)"/>
   </include>
 
 </launch>
