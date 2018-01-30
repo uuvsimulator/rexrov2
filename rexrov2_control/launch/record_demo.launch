@@ -1,20 +1,39 @@
 <launch>
   <arg name="record" default="false"/>
   <arg name="bag_filename" default="$(find uuv_evaluation)/bags/recording.bag"/>
+  <arg name="use_ned_frame" default="false"/>
 
-  <node pkg="rosbag" type="record" name="recording"
-    args="record -O $(arg bag_filename)
-      /rexrov2/dp_controller/trajectory
-      /rexrov2/dp_controller/reference
-      /rexrov2/pose_gt
-      /hydrodynamics/current_velocity
-      /rexrov2/thruster_manager/input
-      /rexrov2/wrench_perturbation
-      /rexrov2/thrusters/0/thrust
-      /rexrov2/thrusters/1/thrust
-      /rexrov2/thrusters/2/thrust
-      /rexrov2/thrusters/3/thrust
-      /rexrov2/thrusters/4/thrust
-      /rexrov2/thrusters/5/thrust"
-    if="$(arg record)"/>
+  <group if="$(arg record)">
+    <node pkg="rosbag" type="record" name="recording"
+      args="record -O $(arg bag_filename)
+        /rexrov2/dp_controller/trajectory
+        /rexrov2/dp_controller/reference
+        /rexrov2/pose_gt_ned
+        /hydrodynamics/current_velocity
+        /rexrov2/thruster_manager/input
+        /rexrov2/wrench_perturbation
+        /rexrov2/thrusters/0/thrust
+        /rexrov2/thrusters/1/thrust
+        /rexrov2/thrusters/2/thrust
+        /rexrov2/thrusters/3/thrust
+        /rexrov2/thrusters/4/thrust
+        /rexrov2/thrusters/5/thrust"
+      if="$(arg use_ned_frame)"/>
+
+      <node pkg="rosbag" type="record" name="recording"
+        args="record -O $(arg bag_filename)
+          /rexrov2/dp_controller/trajectory
+          /rexrov2/dp_controller/reference
+          /rexrov2/pose_gt
+          /hydrodynamics/current_velocity
+          /rexrov2/thruster_manager/input
+          /rexrov2/wrench_perturbation
+          /rexrov2/thrusters/0/thrust
+          /rexrov2/thrusters/1/thrust
+          /rexrov2/thrusters/2/thrust
+          /rexrov2/thrusters/3/thrust
+          /rexrov2/thrusters/4/thrust
+          /rexrov2/thrusters/5/thrust"
+        unless="$(arg use_ned_frame)"/>
+  </group>
 </launch>
