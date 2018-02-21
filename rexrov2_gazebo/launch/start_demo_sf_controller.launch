@@ -1,7 +1,7 @@
 <launch>
     <arg name="record" default="false"/>
     <arg name="bag_filename" default="recording.bag"/>
-    <arg name="use_ned_frame" default="false"/>
+    <arg name="use_ned_frame" default="true"/>
 
     <!-- Vehicle's initial position -->
     <arg name="x" default="0"/>
@@ -12,7 +12,7 @@
     <arg name="teleop_on" default="false"/>
     <arg name="joy_id" default="0"/>
 
-    <include file="$(find uuv_descriptions)/launch/empty_underwater_world.launch"/>
+    <include file="$(find uuv_descriptions)/launch/ocean_waves.launch"/>
 
     <include file="$(find uuv_simulation_wrapper)/launch/unpause_simulation.launch">
         <arg name="timeout" value="5"/>
@@ -26,7 +26,7 @@
         <arg name="use_ned_frame" value="$(arg use_ned_frame)"/>
     </include>
 
-    <include file="$(find rexrov2_control)/launch/start_nmb_sm_controller.launch">
+    <include file="$(find rexrov2_control)/launch/start_sf_controller.launch">
         <arg name="teleop_on" value="$(arg teleop_on)"/>
         <arg name="joy_id" value="$(arg joy_id)"/>
         <arg name="use_ned_frame" value="$(arg use_ned_frame)"/>
