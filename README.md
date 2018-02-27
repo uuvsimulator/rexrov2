@@ -1,37 +1,22 @@
-# RexROV 2
+# BlueROV 2
 
 This repository contains the robot description and necessary launch files to
-simulate the RexROV 2 unmanned underwater vehicle. This repository is complementary
+simulate the BlueROV 2 unmanned underwater vehicle. This repository is complementary
 to the [Unmanned Underwater Vehicle Simulator (UUV Simulator)](https://github.com/uuvsimulator/uuv_simulator),
 an open-source project extending the simulation capabilities of the robotics
 simulator Gazebo to underwater vehicles and environments. For installation and
 usage instructions, please refer to the [documentation pages](https://uuvsimulator.github.io/).
 
-The dimensions and parameters for the RexROV 2 are derived from the published
-model parameters for the SF 30k ROV [1].
-
-[[1] Berg, Viktor. Development and Commissioning of a DP system for ROV SF 30k. MS thesis. Institutt for marin teknikk, 2012.](https://brage.bibsys.no/xmlui/handle/11250/238170)
-
-## Purpose of the project
-
-This software is a research prototype, originally developed for the EU ECSEL
-Project 662107 [SWARMs](http://swarms.eu/).
-
-The software is not ready for production use. However, the license conditions of the
-applicable Open Source licenses allow you to adapt the software to your needs.
-Before using it in a safety relevant setting, make sure that the software
-fulfills your requirements and adjust it according to any applicable safety
-standards (e.g. ISO 26262).
 
 ## Requirements
 
-To simulate the RexROV 2 vehicle, please refer to the [UUV Simulator](https://github.com/uuvsimulator/uuv_simulator)
+To simulate the BlueROV 2 vehicle, please refer to the [UUV Simulator](https://github.com/uuvsimulator/uuv_simulator)
 repository and follow the installation instructions of the package. Then you can clone
 this package in the `src` folder of you catkin workspace
 
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/uuvsimulator/rexrov2.git
+git clone https://github.com/fredvaz/bluerov2.git
 ```
 
 and then build your catkin workspace
@@ -53,11 +38,8 @@ roslaunch uuv_descriptions ocean_waves.launch
 and then
 
 ```bash
-roslaunch rexrov2_gazebo start_rexrov2_pid_controller.launch teleop_on:=true joy_id:=0
+roslaunch bluerov2_gazebo upload.launch
 ```
-
-The teleoperation nodes are pre-configured per default for the XBox 360
-controller.
 
 ## License
 
