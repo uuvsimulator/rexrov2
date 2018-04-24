@@ -10,14 +10,20 @@
         /rexrov2/dp_controller/reference
         /rexrov2/pose_gt_ned
         /hydrodynamics/current_velocity
-        /rexrov2/thruster_manager/input
+        /rexrov2/thruster_manager/input_stamped
         /rexrov2/wrench_perturbation
         /rexrov2/thrusters/0/thrust
         /rexrov2/thrusters/1/thrust
         /rexrov2/thrusters/2/thrust
         /rexrov2/thrusters/3/thrust
         /rexrov2/thrusters/4/thrust
-        /rexrov2/thrusters/5/thrust"
+        /rexrov2/thrusters/5/thrust
+        /rexrov2/thrusters/0/input
+        /rexrov2/thrusters/1/input
+        /rexrov2/thrusters/2/input
+        /rexrov2/thrusters/3/input
+        /rexrov2/thrusters/4/input
+        /rexrov2/thrusters/5/input"
       if="$(arg use_ned_frame)"/>
 
       <node pkg="rosbag" type="record" name="recording"
@@ -26,14 +32,20 @@
           /rexrov2/dp_controller/reference
           /rexrov2/pose_gt
           /hydrodynamics/current_velocity
-          /rexrov2/thruster_manager/input
+          /rexrov2/thruster_manager/input_stamped
           /rexrov2/wrench_perturbation
           /rexrov2/thrusters/0/thrust
           /rexrov2/thrusters/1/thrust
           /rexrov2/thrusters/2/thrust
           /rexrov2/thrusters/3/thrust
           /rexrov2/thrusters/4/thrust
-          /rexrov2/thrusters/5/thrust"
+          /rexrov2/thrusters/5/thrust
+          /rexrov2/thrusters/0/input
+          /rexrov2/thrusters/1/input
+          /rexrov2/thrusters/2/input
+          /rexrov2/thrusters/3/input
+          /rexrov2/thrusters/4/input
+          /rexrov2/thrusters/5/input"
         unless="$(arg use_ned_frame)"/>
   </group>
 </launch>
