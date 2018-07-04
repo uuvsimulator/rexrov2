@@ -2,8 +2,8 @@
 Changelog for package rexrov2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2018-07-04)
+------------------
 * Merge pull request `#16 <https://github.com/uuvsimulator/rexrov2/issues/16>`_ from uuvsimulator/fix/add_max_forward_speed
   ADD Max. forward speed argument to NMB SM control launch file
 * ADD Max. forward speed argument to NMB SM control launch file

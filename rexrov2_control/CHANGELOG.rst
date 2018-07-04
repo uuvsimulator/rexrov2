@@ -2,8 +2,8 @@
 Changelog for package rexrov2_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.2 (2018-07-04)
+------------------
 * FIX Package version number
   Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
 * Merge pull request `#16 <https://github.com/uuvsimulator/rexrov2/issues/16>`_ from uuvsimulator/fix/add_max_forward_speed
