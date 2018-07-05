@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>rexrov2_description</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <description>The robot description files for the RexROV 2 underwater vehicle</description>
 
   <maintainer email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
