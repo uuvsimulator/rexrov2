@@ -2,7 +2,7 @@
 Changelog for package rexrov2_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.1.2 (2018-07-04)
+0.1.0 (2018-07-04)
 ------------------
 * ADD Option to spawn models using geodetic coordinates
   Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
