@@ -1,0 +1,5 @@
+<launch>
+      <test test-name="test_urdf_files" 
+            pkg="rexrov2_description" 
+            type="test_urdf_files.py" />
+</launch>
