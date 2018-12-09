@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>rexrov2_control</name>
   <version>0.1.0</version>
   <description>The rexrov2_control package</description>
 
-  <maintainer email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
+  <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
   <maintainer email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</maintainer>
-  <maintainer email="LuizRicardo.Douat@de.bosch.com">Luiz Ricardo Douat</maintainer>
+  <maintainer email="luizricardo.douat@de.bosch.com">Luiz Ricardo Douat</maintainer>
 
-  <author email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
+  <author email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
   <author email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</author>
-  <author email="LuizRicardo.Douat@de.bosch.com">Luiz Ricardo Douat</author>
+  <author email="luizricardo.douat@de.bosch.com">Luiz Ricardo Douat</author>
 
   <license>Apache-2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>uuv_control_cascaded_pid</run_depend>
-  <run_depend>uuv_thruster_manager</run_depend>
-  <run_depend>uuv_trajectory_control</run_depend>
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_ros_control</depend>
+  <depend>uuv_control_cascaded_pid</depend>
+  <depend>uuv_thruster_manager</depend>
+  <depend>uuv_trajectory_control</depend>
 </package>
