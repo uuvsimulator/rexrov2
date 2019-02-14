@@ -2,6 +2,9 @@
 Changelog for package rexrov2_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.0 (2018-07-04)
 ------------------
 * FIX Package version number

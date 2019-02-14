@@ -2,6 +2,12 @@
 Changelog for package rexrov2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix paths to launch and plugin files after refactor
+  Signed-off-by: Musa Morena Marcusso Manhaes <Musa.Marcusso@de.bosch.com>
+* Contributors: Musa Morena Marcusso Manhaes
+
 0.1.0 (2018-07-04)
 ------------------
 * Merge pull request `#16 <https://github.com/uuvsimulator/rexrov2/issues/16>`_ from uuvsimulator/fix/add_max_forward_speed
