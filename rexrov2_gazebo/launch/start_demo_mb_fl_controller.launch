@@ -12,7 +12,7 @@
     <arg name="teleop_on" default="false"/>
     <arg name="joy_id" default="0"/>
 
-    <include file="$(find uuv_descriptions)/launch/ocean_waves.launch"/>
+    <include file="$(find uuv_gazebo_worlds)/launch/ocean_waves.launch"/>
 
     <include file="$(find uuv_simulation_wrapper)/launch/unpause_simulation.launch">
         <arg name="timeout" value="5"/>

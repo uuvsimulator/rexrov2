@@ -63,7 +63,7 @@
     <rosparam file="$(find oberon4_description)/params/robot_config.yaml" command="load"/>
   </group>
 
-  <include file="$(find uuv_descriptions)/models/common/launch/message_to_tf.launch">
+  <include file="$(find uuv_assistants)/launch/message_to_tf.launch">
     <arg name="namespace" value="$(arg namespace)"/>
   </include>
 </launch>
