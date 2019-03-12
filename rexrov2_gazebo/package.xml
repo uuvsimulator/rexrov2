@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>rexrov2_gazebo</name>
   <version>0.1.1</version>
   <description>Package with launch files for demonstrations with the RexROV 2 vehicle</description>
@@ -16,7 +16,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>rexrov2_description</run_depend>
-  <run_depend>rexrov2_control</run_depend>
+  <exec_depend>rexrov2_description</exec_depend>
+  <exec_depend>rexrov2_control</exec_depend>
 
 </package>
