@@ -2,6 +2,12 @@
 Changelog for package rexrov2_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix dependencies
+  Signed-off-by: Musa Morena Marcusso Manhães <Musa.Marcusso@de.bosch.com>
+* Contributors: Musa Morena Marcusso Manhães
+
 0.1.1 (2019-02-14)
 ------------------
 * Fix paths to launch and plugin files after refactor
