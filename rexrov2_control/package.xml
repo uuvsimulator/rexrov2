@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>rexrov2_control</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <description>The rexrov2_control package</description>
 
   <maintainer email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
@@ -16,9 +16,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>uuv_control_cascaded_pid</run_depend>
-  <run_depend>uuv_thruster_manager</run_depend>
-  <run_depend>uuv_trajectory_control</run_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>uuv_control_cascaded_pid</exec_depend>
+  <exec_depend>uuv_thruster_manager</exec_depend>
+  <exec_depend>uuv_trajectory_control</exec_depend>
 </package>

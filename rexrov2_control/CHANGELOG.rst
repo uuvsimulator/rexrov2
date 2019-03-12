@@ -2,6 +2,12 @@
 Changelog for package rexrov2_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.2 (2019-03-12)
+------------------
+* Update package format
+  Signed-off-by: Musa Morena Marcusso Manhães <Musa.Marcusso@de.bosch.com>
+* Contributors: Musa Morena Marcusso Manhães
+
 0.1.1 (2019-02-14)
 ------------------
 
