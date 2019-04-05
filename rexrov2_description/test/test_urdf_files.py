@@ -19,7 +19,7 @@ import unittest
 import subprocess
 import os
 
-PKG = 'uuv_descriptions'
+PKG = 'rexrov2_description'
 NAME = 'test_urdf_files'
 
 import roslib
