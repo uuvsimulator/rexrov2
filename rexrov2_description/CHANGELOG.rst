@@ -2,8 +2,8 @@
 Changelog for package rexrov2_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.3 (2019-04-05)
+------------------
 * Fix path to rexrov2_description
   Signed-off-by: Musa Morena Marcusso Manhães <musa.marcusso@de.bosch.com>
 * Contributors: Musa Morena Marcusso Manhães
