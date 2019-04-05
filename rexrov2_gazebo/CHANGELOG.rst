@@ -2,6 +2,9 @@
 Changelog for package rexrov2_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.1.2 (2019-03-12)
 ------------------
 * Update package format
