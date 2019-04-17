@@ -1,26 +1,27 @@
+<!-- Spawns the RexROV 2 vehicle in the simulation -->
 <launch>
-  <arg name="debug" default="0"/>
+  <arg name="debug" default="0" doc="Starts the Gazebo plugins in debug mode for more verbose output"/>
 
-  <arg name="x" default="0"/>
-  <arg name="y" default="0"/>
-  <arg name="z" default="-20"/>
-  <arg name="roll" default="0.0"/>
-  <arg name="pitch" default="0.0"/>
-  <arg name="yaw" default="0.0"/>
+  <arg name="x" default="0" doc="X coordinate of the vehicle's initial position (in ENU)"/>
+  <arg name="y" default="0" doc="Y coordinate of the vehicle's initial position (in ENU)"/>    
+  <arg name="z" default="-20" doc="Z coordinate of the vehicle's initial position (in ENU)"/>
+  <arg name="roll" default="0.0" doc="Roll angle of the vehicle's initial orientation"/>
+  <arg name="pitch" default="0.0" doc="Pitch angle of the vehicle's initial orientation"/>
+  <arg name="yaw" default="0.0" doc="Yaw angle of the vehicle's initial orientation"/>
 
-  <arg name="use_geodetic" default="false"/>
-  <arg name="latitude" default="0"/>
-  <arg name="longitude" default="0"/>
-  <arg name="depth" default="0"/>
+  <arg name="use_geodetic" default="false" doc="Spawn the vehicle using geodetic instead of Cartesian coordinates"/>
+  <arg name="latitude" default="0" doc="Latitude for the vehicle's initial position in degrees"/>
+  <arg name="longitude" default="0" doc="Longitude for the vehicle's initial position in degrees"/>
+  <arg name="depth" default="0" doc="Depth of the vehicle's initial position with respect to the water surface in meters"/>
 
-  <arg name="latitude_ref" default="0"/>
-  <arg name="longitude_ref" default="0"/>
-  <arg name="altitude_ref" default="0"/>
+  <arg name="latitude_ref" default="0" doc="Latitude of the origin in degrees"/>
+  <arg name="longitude_ref" default="0" doc="Longitude of the origin in degrees"/>
+  <arg name="altitude_ref" default="0" doc="Altitude of the origin in meters"/>
 
-  <arg name="mode" default="default"/>
-  <arg name="namespace" default="rexrov2"/>
-  <arg name="use_simplified_mesh" default="false"/>
-  <arg name="use_ned_frame" default="false"/>
+  <arg name="mode" default="default" doc="Vehicle's build configuration mode"/>
+  <arg name="namespace" default="rexrov2" doc="Namespace to spawn the vehicle"/>
+  <arg name="use_simplified_mesh" default="false" doc="Use simplified geometries instead of the mesh"/>
+  <arg name="use_ned_frame" default="false" doc="Set the inertial reference to NED (North-East-Down) convention instead of Gazebo's default ENU (East-North-Up)"/>
 
   <group ns="$(arg namespace)">
     <group if="$(arg use_ned_frame)">

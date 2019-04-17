@@ -1,20 +1,21 @@
 <launch>
-  <arg name="record" default="false"/>
-  <arg name="bag_filename" default="recording.bag"/>
+  <arg name="record" default="false" doc="If true, the rosbag record node will be called"/>
+  <arg name="bag_filename" default="recording.bag" doc="Name of the recording bag"/>
+  <arg name="uuv_name" default="rexrov2" doc="Namespace of the vehicle"/>
 
   <node pkg="rosbag" type="record" name="recording"
     args="record -O $(arg bag_filename)
-      /rexrov2/dp_controller/trajectory
-      /rexrov2/dp_controller/reference
-      /rexrov2/pose_gt
+      /$(arg uuv_name)/dp_controller/trajectory
+      /$(arg uuv_name)/dp_controller/reference
+      /$(arg uuv_name)/pose_gt
       /hydrodynamics/current_velocity
-      /rexrov2/thruster_manager/input
-      /rexrov2/wrench_perturbation
-      /rexrov2/thrusters/0/thrust
-      /rexrov2/thrusters/1/thrust
-      /rexrov2/thrusters/2/thrust
-      /rexrov2/thrusters/3/thrust
-      /rexrov2/thrusters/4/thrust
-      /rexrov2/thrusters/5/thrust"
+      /$(arg uuv_name)/thruster_manager/input
+      /$(arg uuv_name)/wrench_perturbation
+      /$(arg uuv_name)/thrusters/0/thrust
+      /$(arg uuv_name)/thrusters/1/thrust
+      /$(arg uuv_name)/thrusters/2/thrust
+      /$(arg uuv_name)/thrusters/3/thrust
+      /$(arg uuv_name)/thrusters/4/thrust
+      /$(arg uuv_name)/thrusters/5/thrust"
     if="$(arg record)"/>
 </launch>

@@ -1,7 +1,27 @@
+<!-- 
+Starts the [model-based feedback linearization controller](https://github.com/uuvsimulator/uuv_simulator/blob/master/uuv_control/uuv_trajectory_control/scripts/rov_mb_fl_controller.py) 
+node with the configurations for the RexROV 2 vehicle.
+The controller's default parameters `Kp`, `Kd` and `Ki`  
+were optimized using [SMAC](https://github.com/automl/SMAC3).
+
+> **Example**
+
+```
+roslaunch uuv_gazebo_worlds ocean_waves.launch
+```
+
+```
+roslaunch rexrov2_description upload_rexrov2.launch
+```
+
+```
+roslaunch rexrov2_control start_mb_fl_controller.launch
+```
+-->
 <launch>
     <arg name="uuv_name" default="rexrov2"/>
     <!-- Flag to start recoding a rosbag  -->
-    <arg name="record" default="false"/>
+    <arg name="record" default="false" doc="Record ROS bag"/>
 
     <arg name="gui_on" default="true"/>
     <arg name="use_ned_frame" default="false"/>
@@ -43,6 +63,7 @@
     <include file="$(find rexrov2_control)/launch/record_demo.launch">
       <arg name="record" value="$(arg record)"/>
       <arg name="use_ned_frame" value="$(arg use_ned_frame)"/>
+      <arg name="uuv_name" value="$(arg uuv_name)"/>
     </include>
 
     <group if="$(arg teleop_on)">

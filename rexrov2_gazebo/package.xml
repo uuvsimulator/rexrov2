@@ -2,7 +2,7 @@
 <package format="2">
   <name>rexrov2_gazebo</name>
   <version>0.1.3</version>
-  <description>Package with launch files for demonstrations with the RexROV 2 vehicle</description>
+  <description>Package with launch files for demonstrations with the RexROV 2 vehicle with different positioning controllers.</description>
 
   <maintainer email="Musa.Marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
   <maintainer email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</maintainer>

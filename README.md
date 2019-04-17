@@ -1,5 +1,13 @@
 # RexROV 2
 
+[![Build Status](https://travis-ci.org/uuvsimulator/rexrov2.svg?branch=master)](https://travis-ci.org/uuvsimulator/rexrov2)
+[![GitHub issues](https://img.shields.io/github/issues/uuvsimulator/rexrov2.svg)](https://github.com/uuvsimulator/rexrov2/issues)
+![License](https://img.shields.io/badge/license-Apache%202-blue.svg)
+
+> Link to the `rexrov2` repository [here](https://github.com/uuvsimulator/rexrov2)
+
+> Link to the [documentation page](https://uuvsimulator.github.io/packages/rexrov2/intro/) 
+
 This repository contains the robot description and necessary launch files to
 simulate the RexROV 2 unmanned underwater vehicle. This repository is complementary
 to the [Unmanned Underwater Vehicle Simulator (UUV Simulator)](https://github.com/uuvsimulator/uuv_simulator),
@@ -11,6 +19,8 @@ The dimensions and parameters for the RexROV 2 are derived from the published
 model parameters for the SF 30k ROV [1].
 
 [[1] Berg, Viktor. Development and Commissioning of a DP system for ROV SF 30k. MS thesis. Institutt for marin teknikk, 2012.](https://brage.bibsys.no/xmlui/handle/11250/238170)
+
+![RexROV 2](images/rexrov2.png)
 
 ## Purpose of the project
 
@@ -47,13 +57,7 @@ To run a demonstration with the vehicle with teleoperation, you can run a UUV
 simulator Gazebo scenario, such as
 
 ```bash
-roslaunch uuv_descriptions ocean_waves.launch
-```
-
-and then
-
-```bash
-roslaunch rexrov2_gazebo start_rexrov2_pid_controller.launch teleop_on:=true joy_id:=0
+roslaunch rexrov2_gazebo start_demo_pid_controller.launch teleop_on:=true joy_id:=0
 ```
 
 The teleoperation nodes are pre-configured per default for the XBox 360
@@ -62,4 +66,4 @@ controller.
 ## License
 
 RexROV 2 package is open-sourced under the Apache-2.0 license. See the
-[LICENSE](LICENSE) file for details.
+[LICENSE]([LICENSE](https://github.com/uuvsimulator/rexrov2/blob/master/LICENSE)) file for details.
