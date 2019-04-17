@@ -1,16 +1,16 @@
 <launch>
-    <arg name="record" default="false"/>
-    <arg name="bag_filename" default="recording.bag"/>
-    <arg name="use_ned_frame" default="false"/>
+    <arg name="record" default="false" doc="Set this flag to true to call record.launch"/>
+    <arg name="bag_filename" default="recording.bag" doc="Name of the output ROS bag file in case record is set to true"/>
+    <arg name="use_ned_frame" default="false" doc="If true, uses the NED (North-East-Down) frame conversion. If false, ENU (East-North-Up) will be used per default."/>
 
     <!-- Vehicle's initial position -->
-    <arg name="x" default="0"/>
-    <arg name="y" default="0"/>
-    <arg name="z" default="-5"/>
-    <arg name="yaw" default="0"/>
+    <arg name="x" default="0" doc="X coordinate of the vehicle's initial position (in ENU)"/>
+    <arg name="y" default="0" doc="Y coordinate of the vehicle's initial position (in ENU)"/>
+    <arg name="z" default="-5" doc="Z coordinate of the vehicle's initial position (in ENU)"/>
+    <arg name="yaw" default="0" doc="Yaw angle of the vehicle's initial orientation"/>
 
-    <arg name="teleop_on" default="false"/>
-    <arg name="joy_id" default="0"/>
+    <arg name="teleop_on" default="false" doc="If true, the teleop node will be started"/>
+    <arg name="joy_id" default="0" doc="Joystick ID"/>
 
     <include file="$(find uuv_gazebo_worlds)/launch/ocean_waves.launch"/>
 
