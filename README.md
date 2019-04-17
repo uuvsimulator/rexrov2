@@ -66,4 +66,4 @@ controller.
 ## License
 
 RexROV 2 package is open-sourced under the Apache-2.0 license. See the
-[LICENSE]([LICENSE](https://github.com/uuvsimulator/rexrov2/blob/master/LICENSE)) file for details.
+[LICENSE](https://github.com/uuvsimulator/rexrov2/blob/master/LICENSE) file for details.
