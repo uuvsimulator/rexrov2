@@ -15,7 +15,7 @@ roslaunch rexrov2_description upload_rexrov2.launch
 ```
 
 ```
-roslaunch rexrov2_control start_pd_grav_compensation_controller.launch
+roslaunch rexrov2_control start_nmb_sm_controller.launch
 ```
 -->
 <launch>
