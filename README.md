@@ -6,7 +6,9 @@
 
 > Link to the `rexrov2` repository [here](https://github.com/uuvsimulator/rexrov2)
 
-> Link to the [documentation page](https://uuvsimulator.github.io/packages/rexrov2/intro/) 
+> Link to the [documentation page](https://uuvsimulator.github.io/packages/rexrov2/intro/)
+
+> Chat on [Discord](https://discord.gg/zNauF2F)
 
 This repository contains the robot description and necessary launch files to
 simulate the RexROV 2 unmanned underwater vehicle. This repository is complementary
