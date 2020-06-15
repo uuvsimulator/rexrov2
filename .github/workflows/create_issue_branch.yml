@@ -1,6 +1,8 @@
 on:
   issues:
-    types: [assigned]
+      types: [assigned]
+  issue_comment:
+      types: [created]
 
 jobs:
   create_issue_branch_job:
@@ -8,3 +10,5 @@ jobs:
     steps:
     - name: Create Issue Branch
       uses: robvanderleek/create-issue-branch@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
