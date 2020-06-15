@@ -10,7 +10,6 @@ env:
   global:
     - LIBGL_ALWAYS_SOFTWARE=1
     - VERBOSE_OUTPUT='false'
-    - CATKIN_CONFIG='--no-install'
     - CATKIN_PARALLEL_JOBS='-p1'
     - ROS_PARALLEL_JOBS='-j1'
     - CCACHE_DIR=$HOME/.ccache
