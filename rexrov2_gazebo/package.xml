@@ -18,5 +18,7 @@
 
   <exec_depend>rexrov2_description</exec_depend>
   <exec_depend>rexrov2_control</exec_depend>
+  <exec_depend>uuv_simulation_wrapper</exec_depend>
+  <exec_depend>uuv_gazebo_worlds</exec_depend>
 
 </package>
