@@ -19,8 +19,10 @@ matrix:
   include:
     - env: PRERELEASE=true ROS_DISTRO=kinetic 
     - env: ROS_DISTRO=kinetic 
+    - env: ROS_DISTRO=kinetic UPSTREAM_WORKSPACE=.rexrov2.rosinstall
     - env: PRERELEASE=true ROS_DISTRO=melodic
     - env: ROS_DISTRO=melodic
+    - env: ROS_DISTRO=melodic UPSTREAM_WORKSPACE=.rexrov2.rosinstall
 install:
   - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config -b master
 script:
