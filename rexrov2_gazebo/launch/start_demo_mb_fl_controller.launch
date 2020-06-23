@@ -11,11 +11,11 @@
 
     <arg name="teleop_on" default="false" doc="If true, the teleop node will be started"/>
     <arg name="joy_id" default="0" doc="Joystick ID"/>
+    <arg name="use_gazebo_client" default="true" doc="If true, the gazebo visualisation client will be started"/>
+    <arg name="world_name" default="ocean_waves" doc="Name of world for gazebo to load. Can be from any of the launch files listed in uuv_gazebo_worlds without an extension."/>
 
-    <include file="$(find uuv_gazebo_worlds)/launch/ocean_waves.launch"/>
-
-    <include file="$(find uuv_simulation_wrapper)/launch/unpause_simulation.launch">
-        <arg name="timeout" value="5"/>
+    <include file="$(find uuv_gazebo_worlds)/launch/$(arg world_name).launch">
+        <arg name="gui" value="$(arg use_gazebo_client)"/>
     </include>
 
     <include file="$(find rexrov2_description)/launch/upload_rexrov2.launch">
