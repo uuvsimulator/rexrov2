@@ -21,8 +21,8 @@
   <xacro:arg name="use_simplified_mesh" default="false"/>
   <xacro:arg name="inertial_reference_frame" default="world"/>
   <!-- Include the ROV macro file -->
-  <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2_base.xacro"/>
-  <xacro:include filename="$(find rexrov2_description)/urdf/rexrov2.gazebo.xacro"/>
+  <xacro:include filename="$(find rexrov2_description)/xacro/rexrov2_base.xacro"/>
+  <xacro:include filename="$(find rexrov2_description)/xacro/rexrov2.gazebo.xacro"/>
 
   <!-- Create the rexrov2 -->
   <xacro:rexrov2_base
@@ -33,18 +33,13 @@
       The underwater object plugin is given as an input block parameter to
       allow the addition of external models of manipulator units
     -->
-    <gazebo>
+    <!-- <gazebo>
       <plugin name="uuv_plugin" filename="libuuv_underwater_object_ros_plugin.so">
         <fluid_density>1028.0</fluid_density>
         <flow_velocity_topic>hydrodynamics/current_velocity</flow_velocity_topic>
         <debug>$(arg debug)</debug>
-        <!-- Adding the hydrodynamic and hydrostatic parameters for the vehicle-->
         <xacro:rexrov2_hydro_model namespace="$(arg namespace)"/>
       </plugin>
-    </gazebo>
+    </gazebo> -->
   </xacro:rexrov2_base>
-
-  <!-- Joint state publisher plugin -->
-  <xacro:default_joint_state_publisher namespace="$(arg namespace)" update_rate="50"/>
-
 </robot>
